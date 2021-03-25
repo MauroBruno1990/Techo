@@ -1,0 +1,29 @@
+.formulario{
+    border-radius: 25px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 20px;
+    border: 1px solid;
+    border-color: #2596be;
+    background-color: #2595be2d;
+}
+
+.botonVolver{
+    background-color:#f37254;
+    margin-right: 3%;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+.botonForm{
+    background-color: #2596be;
+    margin: 3%;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+.inputForm{
+    border-radius: 25px;
+}
