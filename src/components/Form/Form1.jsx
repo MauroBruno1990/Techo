@@ -1,4 +1,4 @@
-import {  Form, Col} from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 import React, { useState } from 'react'
 import { useInput } from '../../hooks/useInput'
 import './index.css';
