@@ -1,7 +1,7 @@
-import { Form, Col } from 'react-bootstrap';
 import React, { useState } from 'react'
 import { useInput } from '../../hooks/useInput'
 import './index.css';
+/* import CarouselForm from './CarouselForm' */
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
@@ -21,62 +21,61 @@ const Form1 = () => {
         setCheck(e.target.value)
     }
 
-    console.log(donacion.value)
+    console.log(check)
     return (
-        <div className='formulario'>
-            <Form>
-            <h3> Paso 1/3 </h3>
-            <fieldset>
-                <h2> Selecciona el monto con el cual te querés sumar </h2>
+        <div>
+            <div className='formulario containerForm'>
+                <form >
+                <h3> Paso 1/3 </h3>
+                <fieldset>
+                    <h2> Selecciona el monto con el cual te querés sumar </h2>
 
-                    <button className='botonForm' onClick ={handleClick} value={500}>500 ARS</button>
-                    <button className='botonForm' onClick ={handleClick} value={600}>600 ARS</button>
-                    <button className='botonForm' onClick ={handleClick} value={700}>700 ARS</button>
-                    <button className='botonForm' >Otro</button>
-                    <input onChange={handleClick}type="number" id="name" name="name" required
-                    minlength="4" maxlength="8" size="10"></input>
+                        <button className='botonForm' onClick ={handleClick} value={500}>500 ARS</button>
+                        <button className='botonForm' onClick ={handleClick} value={600}>600 ARS</button>
+                        <button className='botonForm' onClick ={handleClick} value={700}>700 ARS</button>
+                        <button className='botonForm' >Otro</button>
+                        <input onChange={handleClick} value={check} min='0' type="number" id="name" name="name" required
+                        minlength="4" maxlength="8" size="10"></input>
+                    
+                    <label for="exampleFormControlInput1" class="form-label">¿Cada cuánto querés donar?
+                        <select as="select" defaultValue="Donar mensualmente" {...donacion} required>
+                            <option>...</option>
+                            <option>Donar mensualmente</option>
+                            <option>Por única vez</option>
+                        </select>              
+                    </label>
+                </fieldset>
+                
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su nombre" {...nombre} required/>
+                    </div>
 
-                <Form.Row>               
-                <Form.Group as={Col} controlId="formGridState">
-                    <Form.Label>¿Cada cuánto querés donar?</Form.Label>
-                    <Form.Control as="select" defaultValue="Donar mensualmente" {...donacion}>
-                        <option>Donar mensualmente</option>
-                        <option>Por única vez</option>
-                    </Form.Control>
-                </Form.Group>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su apellido" {...apellido} required/>
+                    </div>
 
-                </Form.Row>
-            </fieldset>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Mail</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su mail" {...mail} required/>
+                    </div>
 
-                <Form.Row >
-                    <Form.Group  as={Col} controlId="formGridEmail" required>
-                        <Form.Label >Nombre</Form.Label>
-                        <Form.Control type="text" placeholder="Nombre"  {...nombre}/>
-                    </Form.Group>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Teléfono</label>
+                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su teléfono" {...telefono} required/>
+                    </div>
 
-                    <Form.Group as={Col} controlId="formGridPassword" required>
-                        <Form.Label>Apellido</Form.Label>
-                        <Form.Control type="text" placeholder="Apellido"  {...apellido}/>
-                    </Form.Group>
-                </Form.Row>
+                    <button className='botonForm' variant="primary" type="submit" required>
+                        Continuar
+                    </button>
 
-                <Form.Group controlId="formGridAddress1" required>
-                    <Form.Label>Mail</Form.Label>
-                    <Form.Control type='email'placeholder="Ingrese su mail"  {...mail}/>
-                </Form.Group>
+                {/* <CarouselForm/> */} {/* ese es un componente hecho con react-bootstrap */}
+                </form>
 
-                <Form.Group controlId="formGridAddress2" required>
-                    <Form.Label>Teléfono</Form.Label>
-                    <Form.Control type='number' placeholder="Teléfono"  {...telefono}/>
-                </Form.Group>
-
-                <button className='botonForm' variant="primary" type="submit">
-                    Continuar
-                </button>
-            </Form>
-
+                
+            </div>
             <p> Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias según el Art. 81 de la Ley N° 20.628. Política de privacidad.</p>
-
         </div>
     )
 }
