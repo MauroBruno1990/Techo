@@ -5,4 +5,5 @@ const sendMailController = require("../controllers/sendMailController")
 
 router.post("/send-mail", sendMailController.send)
 
+
 module.exports = router
