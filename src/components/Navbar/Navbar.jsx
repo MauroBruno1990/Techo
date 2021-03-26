@@ -1,63 +1,41 @@
-import React from "react";
 import './index.css'
-
-
 
 export default function Navbar() {
   return (
-   <div className="navbarProp">
-        <div className="column1">
-      <nav className=" navbar navbar-expand-lg navbar-dark bg-primary ">
-        <a className="navbar-brand" href="http://localhost:3001/">
-        <img src="https://www.techo.org/UY/assets/images/logo_1.png" class="logo logo-display m-top-10" alt="techo" />
-        
-        {/* segunda imagen que cambia de color al hacer scroll */}
-
-        <img src="assets/images/logo_2.png" class="logo logo-scrolled m-top-10" alt="" />
-        </a>
-     {/*    <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
-
-
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="">
-                Inicio <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                Aliados
-              </a>
-            </li> <li className="nav-item">
-              <a className="nav-link" href="">
-                Contacto
-              </a>
-            </li>
-          </ul>
-         
-          
-        </div>
-      </nav>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <a className="navbar-brand" href="#">Navbar</a>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+  
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item active">
+          <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Link</a>
+        </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a className="dropdown-item" href="#">Action</a>
+            <a className="dropdown-item" href="#">Another action</a>
+            <div className="dropdown-divider"></div>
+            <a className="dropdown-item" href="#">Something else here</a>
           </div>
-          <div className="column2 bg-primary" >
-
-          <button type="button" class="btn btn-outline-secondary" className="btnDona">Donar</button>
-      {/*     <a  href="https://fundacionsi.org.ar/comoayudar" data-event="Click Botón Header" data-event-category="Donar">Donar</a> */}
-          </div>
-      </div>
-
+        </li>
+        <li className="nav-item">
+          <a className="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form className="form-inline my-2 my-lg-0">
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
   );
 }
 
