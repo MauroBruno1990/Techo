@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { Form, Col } from 'react-bootstrap';
+import React from 'react'
 import { useInput } from '../../hooks/useInput'
 
 
@@ -9,32 +8,28 @@ const Form2 = () => {
     const numTarjeta = useInput('numTarjeta')
     const tipoTarjeta = useInput('tipoTarjeta')
 
-    
+
     return (
         <div className='formulario'>
             <h3> Paso 2/3 </h3>
-            <Form>
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formGridEmail" required>
-                        <Form.Label>DNI</Form.Label>
-                        <Form.Control type="number" placeholder="DNI" {...DNI}/>
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridPassword" required>
-                        <Form.Label>Provincia</Form.Label>
-                        <Form.Control type="text" placeholder="Provincia" {...provincia}/>
-                    </Form.Group>
-                </Form.Row>
-
-                <Form.Group controlId="formGridAddress1" required>
-                    <Form.Label>Numero de la tarjeta</Form.Label>
-                    <Form.Control type='number'placeholder="Numero de la tarjeta" {...numTarjeta}/>
-                </Form.Group>
-
-                <Form.Group controlId="formGridAddress2" required>
-                    <Form.Label>Tipo de tarjeta</Form.Label>
-                    <Form.Control type='text' placeholder="Tipo de tarjeta" {...tipoTarjeta}/>
-                </Form.Group>
+            <form>
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">DNI</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su DNI" {...DNI} required/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su provincia" {...provincia} required/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Numero de la tarjeta</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el numero de la tarjeta" {...numTarjeta} required/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Tipo de tarjeta</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Seleccione el tipo de tarjeta" {...tipoTarjeta} required/>
+                </div>
 
                 <button className='botonVolver' variant="primary" type="submit">
                     Volver
@@ -42,7 +37,7 @@ const Form2 = () => {
                 <button className='botonForm' variant="primary" type="submit" required>
                     Quiero ser socio/a
                 </button>
-            </Form>
+            </form>
         </div>
     )
 }
