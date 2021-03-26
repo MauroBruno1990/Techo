@@ -5,6 +5,7 @@ import './index.css'
 
 export default function Navbar() {
   return (
+    
    <div className="navbarProp">
         <div className="column1">
       <nav className=" navbar navbar-expand-lg navbar-dark bg-primary ">
