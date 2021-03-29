@@ -17,7 +17,8 @@ export const postData = createAsyncThunk(
       phone,
       amount,
       time,
-    });
+    })
+    
   }
 );
 
