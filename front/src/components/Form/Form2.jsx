@@ -11,9 +11,9 @@ const Form2 = () => {
 
     return (
         <div className='formulario'>
-            <h3> Paso 2/3 </h3>
+            <h5> Paso 2/3 </h5>
             <form>
-                
+                <div className= "containerForm">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">DNI</label>
                     <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su DNI" {...DNI} required/>
@@ -22,6 +22,9 @@ const Form2 = () => {
                     <label for="exampleFormControlInput1" class="form-label">Provincia</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su provincia" {...provincia} required/>
                 </div>
+                </div>
+
+                <div className= "containerForm" >
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Numero de la tarjeta</label>
                     <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el numero de la tarjeta" {...numTarjeta} required/>
@@ -31,13 +34,24 @@ const Form2 = () => {
                     <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Seleccione el tipo de tarjeta" {...tipoTarjeta} required/>
                 </div>
 
-                <button className='botonVolver' variant="primary" type="submit">
-                    Volver
-                </button>
+                </div>
+                <div>
                 <button className='botonForm' variant="primary" type="submit" required>
                     Quiero ser socio/a
                 </button>
+                </div>
+                <div>
+                <button className='botonVolver' variant="primary" type="submit">
+                    Volver
+                </button>
+                </div>
             </form>
+            <p>
+          {" "}
+          Todas las donaciones a TECHO son deducibles del Impuesto a las
+          Ganancias según el Art. 81 de la Ley N° 20.628. Política de
+          privacidad.
+        </p>
         </div>
     )
 }
