@@ -1,14 +1,15 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const db = require('./config/db');
+const app = express();
 
-const morgan = require("morgan")
-const routes = require("./routes")
+const morgan = require("morgan");
+const routes = require("./routes");
 
-app.use(morgan("tiny"))
+app.use(morgan("tiny"));
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.use("/api", routes)
+app.use("/api", routes);
 
-app.listen(8080, () => console.log("Listening in port 8080"))
+app.listen(8080, () => console.log("Listening in port 8080"));
