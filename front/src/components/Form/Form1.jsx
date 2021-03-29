@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import axios from "axios"
+import { useDispatch, useSelector } from "react-redux"
+import { postData } from "../../state/reducers/user"
 import { useInput } from '../../hooks/useInput'
 import './index.css';
 /* import CarouselForm from './CarouselForm' */
+
+
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
@@ -10,6 +13,8 @@ import './index.css';
 
 // Los datos del formulario deben conservarse para el segundo paso, mantenerse en un estado (de redux supongo)
 const Form1 = () => {
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.users)
     const donacion = useInput('donacion')
     const nombre = useInput('nombre')
     const apellido = useInput('apellido')
@@ -22,11 +27,23 @@ const Form1 = () => {
         setCheck(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        dispatch(postData({
+            name: nombre.value,
+            lastname: apellido.value, 
+            email: mail.value,
+            phone: telefono.value, 
+            amount: check, 
+            time: donacion.value,
+        }))
+    }
+
     console.log(check)
     return (
         <div>
             <div className='formulario containerForm'>
-                <form >
+                <form onSubmit={handleSubmit}>
                 <h3> Paso 1/3 </h3>
                 <fieldset>
                     <h2> Selecciona el monto con el cual te querés sumar </h2>
