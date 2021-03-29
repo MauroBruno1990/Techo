@@ -1,17 +1,19 @@
-import Navbar from "./components/Navbar/Navbar";
+
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header'
+import MasterForm from './components/Form/MasterForm';
 import Form1 from "./components/Form/Form1";
 import Form2 from "./components/Form/Form2";
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header/>
+      <MasterForm />
 
-      <Form1 />
-      <Form2 />
+      {/* <Form2/> */}
 
       <Footer />
     </div>
