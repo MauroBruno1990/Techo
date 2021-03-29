@@ -7,7 +7,3 @@ mongoose.connect("mongodb+srv://techo:techo@techo.2k9wu.mongodb.net/techo?retryW
 .then(()=> console.log("db connect"))
 .catch((e) => console.log("db no connect"))
 
-
-
-
-/* mongodb+srv://techo:<password>@techo.2k9wu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority */
