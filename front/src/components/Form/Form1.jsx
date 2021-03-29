@@ -45,7 +45,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
         //time: donacion.value,
       })
     );
-    handleCallback(mail.value);
     // history.push("/paso2")
   };
 
