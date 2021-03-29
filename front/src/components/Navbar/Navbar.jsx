@@ -15,6 +15,7 @@ function scrollFunction() {
 }
 
 export default function Navbar() {
+  
   return (
     <nav
       className="navbar navbar-expand-lg navbarProp"
