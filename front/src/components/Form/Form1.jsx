@@ -34,21 +34,22 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(nombre);
+
     dispatch(
       postData({
-        name: nombre.value,
-        lastname: apellido.value,
-        email: mail.value,
-        phone: telefono.value,
-        //amount: check,
-        //time: donacion.value,
+        name: data.name,
+        lastname: data.lastname,
+        email: data.email,
+        phone: data.phone,
+        amount: data.amount,
+        time: data.time,
       })
-    );
-    // history.push("/paso2")
+    )
+    .then(() => handleContinuar());
+    
   };
 
-  console.log(nombre.value);
+  console.log(data);
 
   return (
     <div>
@@ -58,23 +59,39 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
           <fieldset>
             <h2> Selecciona el monto con el cual te querés sumar </h2>
 
-            <button className="botonForm" onClick={handleClick} value={500}>
+            <button 
+              type='button'
+              name='amount'
+              className="botonForm"              
+              onClick={handleData} 
+              value={500}>
               500 ARS
             </button>
-            <button className="botonForm" onClick={handleClick} value={600}>
+            <button 
+              type='button'
+              name='amount'
+              className="botonForm"              
+              onClick={handleData} 
+              value={600}>
               600 ARS
             </button>
-            <button className="botonForm" onClick={handleClick} value={700}>
+            <button 
+              type='button'
+              name='amount'
+              className="botonForm"              
+              onClick={handleData} 
+              value={700}>
               700 ARS
             </button>
+
             <button className="botonForm">Otro</button>
             <input
-              onChange={handleClick}
-              value={check}
+              onChange={handleData}
+              value={data.amount}
               min="0"
               type="number"
               id="name"
-              name="name"
+              name="amount"
               required
               minlength="4"
               maxlength="8"
@@ -86,12 +103,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               <select
                 as="select"
                 defaultValue="Donar mensualmente"
-                {...donacion}
+                name='time'
+                value={data.time}
+                onChange={handleData}
                 required
               >
                 <option>...</option>
-                <option>Donar mensualmente</option>
-                <option>Por única vez</option>
+                <option value='Donar mensualmente'>Donar mensualmente</option>
+                <option value='Por única vez'>Por única vez</option>
               </select>
             </label>
           </fieldset>
@@ -164,7 +183,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             variant="primary"
             type="submit"
             required
-            onClick={() => handleContinuar()}
           >
             Continuar
           </button>
