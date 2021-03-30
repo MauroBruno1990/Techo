@@ -41,8 +41,8 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
         lastname: apellido.value,
         email: mail.value,
         phone: telefono.value,
-        //amount: check,
-        //time: donacion.value,
+        amount: check,
+        time: donacion.value,
       })
     );
     // history.push("/paso2")
