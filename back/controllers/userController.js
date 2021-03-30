@@ -12,9 +12,9 @@ const userController = {
       });
   },
   update(req, res) {
-    User.findByIdAndUpdate({ _id: req.params.id }, req.body)
-      .then((user) => res.send(user).status(200))
-      .catch((e) => res.send(e).status(500));
+    User.findOneAndUpdate({ email: req.body.email }, req.body)
+    .then((user) => res.send(user).status(200))
+    .catch((e) => res.send(e).status(500));
   },
 };
 
