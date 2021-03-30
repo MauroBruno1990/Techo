@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { postData } from "../../state/reducers/user";
 import { useInput } from "../../hooks/useInput";
 import "./index.css";
+import Form2 from "./Form2";
 /* import CarouselForm from './CarouselForm' */
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
@@ -9,38 +12,63 @@ import "./index.css";
 // Al apretar continuar, esta primera información debería ser guardada, sin importar si la persona realiza una donación o no.
 
 // Los datos del formulario deben conservarse para el segundo paso, mantenerse en un estado (de redux supongo)
-const Form1 = () => {
+const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  // const user = useSelector(state => state.users)
   const donacion = useInput("donacion");
   const nombre = useInput("nombre");
   const apellido = useInput("apellido");
+
   const mail = useInput("mail");
   const telefono = useInput("telefono");
   const [check, setCheck] = useState(0);
+
+  //const [user, setUser] = useState({})
+  //   const [email, setEmail] = useState("")
+  //console.log(user);
 
   const handleClick = (e) => {
     setCheck(e.target.value);
   };
 
-  console.log(check);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(nombre);
+    dispatch(
+      postData({
+        name: data.name,
+        lastname: data.lastname,
+        email: data.email,
+        phone: data.phone,
+        amount: check,
+        time: donacion.value,
+      })
+    );
+    // history.push("/paso2")
+  };
+  console.log (postData)
+
+  console.log(nombre.value);
+
   return (
     <div>
-      <div className="formulario">
-        <form>
-          <h5 > Paso 1/3 </h5>
-          
-         
-            <h3 className="tituloh2"> Selecciona el monto con el cual te querés sumar </h3>
-            <div className= "containerForm">
-            <button className="botonDonar" onClick={handleClick} value={500}>
+      <div className="formulario containerForm">
+        <form onSubmit={handleSubmit}>
+          <h3> Paso 1/3 </h3>
+          <fieldset>
+            <h2> Selecciona el monto con el cual te querés sumar </h2>
+
+            <button className="botonForm" onClick={handleClick} value={500}>
               500 ARS
             </button>
-            <button className="botonDonar" onClick={handleClick} value={600}>
+            <button className="botonForm" onClick={handleClick} value={600}>
               600 ARS
             </button>
-            <button className="botonDonar" onClick={handleClick} value={700}>
+            <button className="botonForm" onClick={handleClick} value={700}>
               700 ARS
             </button>
-            <button className="botonDonar">Otro</button>
+            <button className="botonForm">Otro</button>
             <input
               onChange={handleClick}
               value={check}
@@ -51,17 +79,15 @@ const Form1 = () => {
               required
               minlength="4"
               maxlength="8"
-              size="40"
-              class="form-control"
+              size="10"
             ></input>
-            </div>
-            <label for="exampleFormControlInput1" class="form-label" className="containerForm">
+
+            <label for="exampleFormControlInput1" class="form-label">
               ¿Cada cuánto querés donar?
               <select
                 as="select"
                 defaultValue="Donar mensualmente"
                 {...donacion}
-                class="form-control"
                 required
               >
                 <option>...</option>
@@ -69,18 +95,20 @@ const Form1 = () => {
                 <option>Por única vez</option>
               </select>
             </label>
-
-         <div className= "containerForm">
+          </fieldset>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">
               Nombre
             </label>
             <input
+              name="name"
               type="text"
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="Ingrese su nombre"
-              {...nombre}
+              //   {...nombre}
+              onChange={handleData}
+              value={data.name}
               required
             />
           </div>
@@ -89,27 +117,30 @@ const Form1 = () => {
               Apellido
             </label>
             <input
+              name="lastname"
               type="text"
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="Ingrese su apellido"
-              {...apellido}
+              //   {...apellido}
+              onChange={handleData}
+              value={data.lastname}
               required
             />
           </div>
-          </div>
-
-          <div className= "containerForm">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">
               Mail
             </label>
             <input
+              name="email"
               type="email"
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="Ingrese su mail"
-              {...mail}
+              //   {...mail}
+              onChange={handleData}
+              value={data.email}
               required
             />
           </div>
@@ -118,35 +149,35 @@ const Form1 = () => {
               Teléfono
             </label>
             <input
+              name="phone"
+              onChange={handleData}
+              value={data.phone}
               type="number"
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="Ingrese su teléfono"
-              {...telefono}
+              //   {...telefono}
               required
             />
           </div>
-          </div>
-
           <button
             className="botonForm"
             variant="primary"
-            type="submit"
+            type="button"
             required
+            onClick={ () => handleContinuar()} 
           >
             Continuar
           </button>
           {/* <CarouselForm/> */}{" "}
           {/* ese es un componente hecho con react-bootstrap */}
         </form>
-
-        <p>
-          {" "}
-          Todas las donaciones a TECHO son deducibles del Impuesto a las
-          Ganancias según el Art. 81 de la Ley N° 20.628. Política de
-          privacidad.
-        </p>
       </div>
+      <p>
+        {" "}
+        Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
+        según el Art. 81 de la Ley N° 20.628. Política de privacidad.
+      </p>
     </div>
   );
 };
