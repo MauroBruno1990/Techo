@@ -178,6 +178,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               required
             />
           </div>
+          
           <button
             className="botonForm"
             variant="primary"
