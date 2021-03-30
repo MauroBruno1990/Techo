@@ -76,7 +76,7 @@ const Form2 = ({ handleVolver }) => {
         <button
           className="botonVolver"
           variant="primary"
-          type="submit"
+          type="button"
           onClick={ () => handleVolver() }
         >
           Volver

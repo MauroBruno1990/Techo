@@ -1,7 +1,8 @@
 const User = require("../dbmodels/user");
 
 const userController = {
-  create(req, res) {
+  create(req, res) { 
+    // buscar si existe el usuario por ID
     User.create(req.body)
       .then((user) => {
         res.status(201).send(user);
