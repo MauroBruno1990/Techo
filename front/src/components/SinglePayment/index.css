@@ -1,0 +1,42 @@
+.container {
+    width: 50%;
+}
+
+
+.medium {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.singleButton {
+    width: 90px;
+    height: 65px;
+    border-radius: 20px;
+    color: white;
+    background-color: #EA6D4F;
+    margin: 5px;
+    font-size: x-large;
+}
+
+.containerColumns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titles{
+    color: rgb(0, 146, 221);
+    margin-right: 10px;
+}
+
+.mercadoPago {
+    display: flex;
+    flex-direction: row;
+}
+
+.p {
+    line-height: 0.2;
+}
+

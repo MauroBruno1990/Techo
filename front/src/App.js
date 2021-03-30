@@ -2,20 +2,22 @@
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header'
 import MasterForm from './components/Form/MasterForm';
-import Form1 from "./components/Form/Form1";
-import Form2 from "./components/Form/Form2";
 import Footer from "./components/Footer/Footer";
+import SinglePayment from "./components/SinglePayment/SinglePayment";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Header/>
-      <MasterForm />
-
-      {/* <Form2/> */}
-
-      <Footer />
+    <div> 
+      <BrowserRouter>
+        <Navbar />
+        <Header/>
+          <Switch>
+            <Route exact path="/" component={MasterForm}/>
+            <Route exact path="/unicaVez" component={SinglePayment}/>
+          </Switch>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
