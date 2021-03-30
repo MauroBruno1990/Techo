@@ -34,7 +34,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    handleContinuar()
     dispatch(
       postData({
         name: data.name,
@@ -45,7 +45,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
         time: data.time,
       })
     )
-    .then(() => handleContinuar());
+    //.then(() => handleContinuar());
     
   };
 
