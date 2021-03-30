@@ -10,15 +10,15 @@ const MasterForm = () => {
     lastname: "",
     email: "",
     phone: "",
-    //amount: "",
-    //time: "",
+    amount: "",
+    time: "",
   });
 
   //   const handleCallback = (mail) => {
   //     setEmail(mail);
   //   };
 
-  const handleContinuar = () => {
+  const handleContinuar = () => {    
     setItem(item + 1);
   };
 
