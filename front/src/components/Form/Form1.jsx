@@ -34,27 +34,18 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    handleContinuar()
     dispatch(
       postData({
-<<<<<<< HEAD
-        name: nombre.value,
-        lastname: apellido.value,
-        email: mail.value,
-        phone: telefono.value,
-        amount: check,
-        time: donacion.value,
-=======
         name: data.name,
         lastname: data.lastname,
         email: data.email,
         phone: data.phone,
         amount: data.amount,
         time: data.time,
->>>>>>> 6b00cb04ebad4b74aa58381dd68a0b256230a647
       })
     )
-    .then(() => handleContinuar());
+    //.then(() => handleContinuar());
     
   };
 
