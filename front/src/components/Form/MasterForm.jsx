@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../Header/Header";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 
@@ -18,7 +19,7 @@ const MasterForm = () => {
   //     setEmail(mail);
   //   };
 
-  const handleContinuar = () => {    
+  const handleContinuar = () => {
     setItem(item + 1);
   };
 
@@ -30,14 +31,26 @@ const MasterForm = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  console.log(data)
-  
+  console.log(data);
+
   return (
     <>
-      {item == 0 && <Form1 handleContinuar={handleContinuar} handleData={handleData} data={data} />}
-      {item == 1 && <Form2 handleVolver={handleVolver} />}
-      {/* <Route exact path="/" component={Form1} /> 
-          <Route exact path="/paso2" component={Form2} /> */}
+      <Header />
+      <div style={{ marginTop: 50, marginBottom: 50 }}>
+        {item == 0 && (
+          <Form1
+            handleContinuar={handleContinuar}
+            handleData={handleData}
+            data={data}
+          />
+        )}
+        {item == 1 && <Form2 handleVolver={handleVolver} />}
+        {/* <p>
+        {" "}
+        Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
+        según el Art. 81 de la Ley N° 20.628. Política de privacidad.
+      </p> */}
+      </div>
     </>
   );
 };

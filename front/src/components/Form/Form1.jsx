@@ -32,9 +32,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     setCheck(e.target.value);
   };
 
+  const handleRedirect = (e) => {
+    e.preventDefault()
+    history.push("/unicavez");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleContinuar()
+    handleContinuar();
     dispatch(
       postData({
         name: data.name,
@@ -44,9 +49,8 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
         amount: data.amount,
         time: data.time,
       })
-    )
+    );
     //.then(() => handleContinuar());
-    
   };
 
   console.log(data);
@@ -55,32 +59,35 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     <div>
       <div className="formulario containerForm">
         <form onSubmit={handleSubmit}>
-          <h3> Paso 1/3 </h3>
+          <h3> Paso 1/2 </h3>
           <fieldset>
             <h2> Selecciona el monto con el cual te querés sumar </h2>
 
-            <button 
-              type='button'
-              name='amount'
-              className="botonForm"              
-              onClick={handleData} 
-              value={500}>
+            <button
+              type="button"
+              name="amount"
+              className="botonForm"
+              onClick={handleData}
+              value={500}
+            >
               500 ARS
             </button>
-            <button 
-              type='button'
-              name='amount'
-              className="botonForm"              
-              onClick={handleData} 
-              value={600}>
+            <button
+              type="button"
+              name="amount"
+              className="botonForm"
+              onClick={handleData}
+              value={600}
+            >
               600 ARS
             </button>
-            <button 
-              type='button'
-              name='amount'
-              className="botonForm"              
-              onClick={handleData} 
-              value={700}>
+            <button
+              type="button"
+              name="amount"
+              className="botonForm"
+              onClick={handleData}
+              value={700}
+            >
               700 ARS
             </button>
 
@@ -103,14 +110,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               <select
                 as="select"
                 defaultValue="Donar mensualmente"
-                name='time'
+                name="time"
                 value={data.time}
                 onChange={handleData}
                 required
               >
                 <option>...</option>
-                <option value='Donar mensualmente'>Donar mensualmente</option>
-                <option value='Por única vez'>Por única vez</option>
+                <option value="Donar mensualmente">Donar mensualmente</option>
+                <option value="Por única vez">Por única vez</option>
               </select>
             </label>
           </fieldset>
@@ -178,23 +185,28 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               required
             />
           </div>
-          <button
-            className="botonForm"
-            variant="primary"
-            type="submit"
-            required
-          >
-            Continuar
-          </button>
+          {data.time == "Donar mensualmente" ? (
+            <button
+              className="botonForm"
+              variant="primary"
+              type="submit"
+              required
+            >
+              Continuar
+            </button>
+          ) : <button
+          className="botonForm"
+          variant="primary"
+          type="submit"
+          onClick={handleRedirect}
+          required
+        >
+          Dona por unica vez 
+        </button>}
           {/* <CarouselForm/> */}{" "}
           {/* ese es un componente hecho con react-bootstrap */}
         </form>
       </div>
-      <p>
-        {" "}
-        Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
-        según el Art. 81 de la Ley N° 20.628. Política de privacidad.
-      </p>
     </div>
   );
 };
