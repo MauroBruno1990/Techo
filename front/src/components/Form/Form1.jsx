@@ -33,7 +33,17 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   };
 
   const handleRedirect = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    dispatch(
+      postData({
+        name: data.name,
+        lastname: data.lastname,
+        email: data.email,
+        phone: data.phone,
+        amount: data.amount,
+        time: data.time,
+      })
+    );
     history.push("/unicavez");
   };
 
@@ -56,7 +66,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   console.log(data);
 
   return (
-    <div>
+    <section id="dona">
       <div className="formulario containerForm">
         <form onSubmit={handleSubmit}>
           <h3> Paso 1/2 </h3>
@@ -185,7 +195,18 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               required
             />
           </div>
-          {data.time == "Donar mensualmente" ? (
+          {data.time == "Por única vez" ? (
+            <button
+              className="botonForm"
+              variant="primary"
+              type="submit"
+              onClick={handleRedirect}
+              onSubmit={handleSubmit}
+              required
+            >
+              Dona por unica vez
+            </button>
+          ) : (
             <button
               className="botonForm"
               variant="primary"
@@ -194,20 +215,12 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             >
               Continuar
             </button>
-          ) : <button
-          className="botonForm"
-          variant="primary"
-          type="submit"
-          onClick={handleRedirect}
-          required
-        >
-          Dona por unica vez 
-        </button>}
+          )}
           {/* <CarouselForm/> */}{" "}
           {/* ese es un componente hecho con react-bootstrap */}
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
