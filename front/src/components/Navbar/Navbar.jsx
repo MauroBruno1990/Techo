@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import "./index.css";
 
 window.onscroll = function () {
@@ -6,22 +7,20 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("header").style.backgroundColor = "rgb(0, 146, 221)";
-  }
-   else {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    document.getElementById("header").style.backgroundColor =
+      "rgb(0, 146, 221)";
+  } else {
     document.getElementById("header").style.backgroundColor = "transparent";
   }
 }
 
 export default function Navbar() {
-  
   return (
-    <nav
-      className="navbar navbar-expand-lg navbarProp"
-      id="header"
-
-    >
+    <nav className="navbar navbar-expand-lg navbarProp" id="header">
       <a className="navbar-brand" href="http://localhost:3000/">
         <img
           src="https://www.techo.org/UY/assets/images/logo_1.png"
@@ -50,26 +49,26 @@ export default function Navbar() {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active" >
-            <a className="nav-link" href="#" >
+          <li className="nav-item active">
+            <a className="nav-link white" href="#">
               Inicio <span className="sr-only">(current)</span>
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link white" href="#">
               Aliados
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Contacto
+            <a className="nav-link white" href="#">
+              <Link to="contacto" smooth duration={1000}>Contacto</Link>
             </a>
           </li>
           <li className="nav-item dropdown"></li>
         </ul>
         <span className="d-flex botonDona btnHover">
           <button className="btn" type="submit">
-            <span className="letraBtn">DONA</span>
+            <span className="letraBtn">Doná</span>
           </button>
         </span>
       </div>
