@@ -34,6 +34,16 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const handleRedirect = (e) => {
     e.preventDefault();
+    dispatch(
+      postData({
+        name: data.name,
+        lastname: data.lastname,
+        email: data.email,
+        phone: data.phone,
+        amount: data.amount,
+        time: data.time,
+      })
+    );
     history.push("/unicavez");
   };
 
@@ -57,7 +67,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   console.log(data);
 
   return (
-    <div>
+    <section id="dona">
       <div className="formulario containerForm">
         <form onSubmit={handleSubmit}>
           <h3> Paso 1/2 </h3>
@@ -192,6 +202,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               variant="primary"
               type="submit"
               onClick={handleRedirect}
+              onSubmit={handleSubmit}
               required
             >
               Dona por unica vez
@@ -210,7 +221,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
           {/* ese es un componente hecho con react-bootstrap */}
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

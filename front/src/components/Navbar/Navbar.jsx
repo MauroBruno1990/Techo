@@ -67,9 +67,11 @@ export default function Navbar() {
           <li className="nav-item dropdown"></li>
         </ul>
         <span className="d-flex botonDona btnHover">
-          <button className="btn" type="submit">
+          <Link to="dona" smooth duration ={1000}>
+          <button className="btn" type="submit" >
             <span className="letraBtn">Doná</span>
           </button>
+          </Link>
         </span>
       </div>
     </nav>

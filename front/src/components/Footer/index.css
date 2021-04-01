@@ -33,13 +33,23 @@
 .formButton {
     display: flex;
     justify-content: center;
-
+    
 } 
 
 .button {
     border-radius: 5px;
     width: 100px;
     height: 50px;
+}
+
+.buttonSend {
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    background-color: #ea6d4f;
+    border-radius: 5px;
+    border-bottom: white;
+    color: white;
 }
 
 .column1 {
