@@ -11,8 +11,8 @@ const MasterForm = () => {
     lastname: "",
     email: "",
     phone: "",
-    amount: "",
-    time: "",
+    amount: "600",
+    time: "socio",
   });
 
   //   const handleCallback = (mail) => {
@@ -36,7 +36,7 @@ const MasterForm = () => {
   return (
     <>
       <Header />
-      <div style={{ marginTop: 50, marginBottom: 50 }}>
+      <div className="masterForm">
         {item == 0 && (
           <Form1
             handleContinuar={handleContinuar}
@@ -45,11 +45,11 @@ const MasterForm = () => {
           />
         )}
         {item == 1 && <Form2 handleVolver={handleVolver} />}
-        {/* <p>
+        {<p className="centerText">
         {" "}
         Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
         según el Art. 81 de la Ley N° 20.628. Política de privacidad.
-      </p> */}
+      </p>}
       </div>
     </>
   );

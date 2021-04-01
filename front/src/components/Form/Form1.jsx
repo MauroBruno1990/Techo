@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
 import { useInput } from "../../hooks/useInput";
@@ -71,12 +71,12 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
         <form onSubmit={handleSubmit}>
           <h3> Paso 1/2 </h3>
           <fieldset>
-            <h2> Selecciona el monto con el cual te querés sumar </h2>
+            <h2> Selecciona el monto con el cual te querés sumar mensualmente</h2>
 
             <button
               type="button"
               name="amount"
-              className="botonForm"
+              className="botonForm botonHover"
               onClick={handleData}
               value={500}
             >
@@ -85,7 +85,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             <button
               type="button"
               name="amount"
-              className="botonForm"
+              className="botonDestacado botonHover"
               onClick={handleData}
               value={600}
             >
@@ -94,14 +94,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             <button
               type="button"
               name="amount"
-              className="botonForm"
+              className="botonForm botonHover"
               onClick={handleData}
               value={700}
             >
               700 ARS
             </button>
 
-            <button className="botonForm">Otro</button>
+            <button className="botonOtro botonHover">Otro</button>
             <input
               onChange={handleData}
               value={data.amount}
@@ -115,7 +115,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               size="10"
             ></input>
 
-            <label for="exampleFormControlInput1" class="form-label">
+           {/*  <label for="exampleFormControlInput1" class="form-label">
               ¿Cada cuánto querés donar?
               <select
                 as="select"
@@ -129,7 +129,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 <option value="Donar mensualmente">Donar mensualmente</option>
                 <option value="Por única vez">Por única vez</option>
               </select>
-            </label>
+            </label> */}
           </fieldset>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">
@@ -195,18 +195,8 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               required
             />
           </div>
-          {data.time == "Por única vez" ? (
-            <button
-              className="botonForm"
-              variant="primary"
-              type="submit"
-              onClick={handleRedirect}
-              onSubmit={handleSubmit}
-              required
-            >
-              Dona por unica vez
-            </button>
-          ) : (
+          
+          
             <button
               className="botonForm"
               variant="primary"
@@ -215,7 +205,10 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             >
               Continuar
             </button>
-          )}
+            
+            
+          
+         
           {/* <CarouselForm/> */}{" "}
           {/* ese es un componente hecho con react-bootstrap */}
         </form>
