@@ -18,7 +18,8 @@
 }
 
 .btnHover:hover {
-  background-color: rgb(134, 134, 134);
+  background-color: rgb(215, 142, 1);
+  transition: 0.4s;
 }
 
 .letraBtn {
@@ -41,4 +42,9 @@
 
 .white {
   color: white;
+  
+}
+
+.whiteHover:hover {
+  transition: 0.3s;
 }

@@ -80,7 +80,12 @@ const Form2 = ({ handleVolver }) => {
         >
           Volver
         </button>
-        <button className="botonForm" variant="primary" type="submit" required>
+        <button 
+          className="botonForm" 
+          variant="primary" 
+          type="submit" 
+          required
+        >
           Quiero ser socio/a
         </button>
       </form>

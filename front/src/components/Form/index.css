@@ -9,6 +9,8 @@
 }
 
 .botonVolver{
+    width: 90px;
+    height: 65px;
     background-color:#f37254;
     border-radius: 10px;
     color: white;
@@ -16,12 +18,37 @@
 }
 
 .botonForm{
+    height: 65px; 
     background-color: #2596be;
     margin: 2%;
     border-radius: 10px;
     color: white;
     border: none;
 }
+
+.botonDestacado {
+    height: 65px;
+    background-color:#f37254;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
+.botonOtro {
+    width: 75px;
+    height: 65px;
+    background-color:#2596be;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    
+}
+
+.botonHover:hover {
+    background-color: rgb(215, 142, 1);
+    transition: 0.4s;
+  }
 
 .inputForm{
     border-radius: 25px;
@@ -31,4 +58,17 @@
     display: flex;
     flex-direction: row;
 }
+
+.masterForm {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.centerText {
+    margin-top: 10px;
+    margin-right: 70px;
+    text-align: center;
+}
+
 
