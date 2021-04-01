@@ -18,7 +18,7 @@ const Form2 = ({ handleVolver }) => {
 
   return (
     <div className="formulario">
-      <h3> Paso 2/3 </h3>
+      <h3> Paso 2/2 </h3>
       <form>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">
