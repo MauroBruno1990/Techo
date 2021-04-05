@@ -17,8 +17,7 @@ function App() {
         </Switch>
       </BrowserRouter>
       <CarrouselTestimony />
-      {/* <Footer /> */}
-      <FooterDos />
+      {/* <FooterDos /> */}
     </div>
   );
 }

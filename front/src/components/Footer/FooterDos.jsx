@@ -4,13 +4,13 @@ export default function FooterDos() {
   return (
     <div className="container-fluid bg-primary">
       <div className="row">
-        <div className="col-sm-4">
+        <div className="col-md-4">
           <img
             src="https://www.techo.org/wp-content/uploads/2018/02/techo-footer.png"
             alt="logo de techo "
-            className="img-fluid p-5"
+            className="img-fluid ml-4 mt-3"
           />
-          <div className="items">
+          <div className="items ml-4">
             <a href="https://www.facebook.com/TECHOargentina/" target="blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,68 +79,62 @@ export default function FooterDos() {
             </a>
           </div>
         </div>
-        <div className="col-sm-8">
-          <h3 className="text-center text-white">CONTACTO</h3>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control inputMargin"
-              id="exampleFormControlInput1"
-              placeholder="Nombre"
-            />
-            <input
-              type="email"
-              className="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Email"
-            />
-            <input
-              type="text"
-              className="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Teléfono"
-            />
-          </div>
-          <div className="mb-3">
-            {/* <select
-              as="select"
-              defaultValue="Donar mensualmente"
-              name="time"
-              required
-            >
-              <option>Quiero conocer más sobre el programa de viviendas</option>
-              <option>Quiero hacer una donación</option>
-              <option>Quiero sumar a mi empresa</option>
-              <option>Quiero sumarme al voluntariado</option>
-            </select>
-           */}
-            <select class="form-select" aria-label="Default select example">
-                {/* me rompe lo responsive el texto largo */}
-              <option selected>Quiero conocer más sobre ...</option>
-              <option value="1">Quiero hacer una donación</option>
-              <option value="2">Quiero sumar a mi empresa</option>
-              <option value="3">Quiero sumarme al voluntariado</option>
-            </select>
+        <div className="col-md-8">
+          <h3 className="text-center text-white mb-3 mt-3">CONTACTO</h3>
+          <div className="row mb-3 ml-5">
+            <div className="col-sm-6">
+              <input
+                type="text"
+                className="form-control w-75 mb-2"
+                placeholder="Nombre"
+              />
+              <input
+                type="email"
+                className="form-control w-75 mb-2"
+                placeholder="Email"
+              />
+            </div>
+            <div className="col-sm-6">
+              <input
+                type="text"
+                className="form-control w-75 mb-2"
+                placeholder="Teléfono"
+              />
+
+              <select
+                className="form-select mb-3 w-75"
+                aria-label="Default select example"
+                name="info-contacto"
+              >
+                <option value="Quiero conocer más sobre ..." selected>
+                  Quiero conocer más sobre el programa de viviendas
+                </option>
+                <option value="Quiero hacer una donación">
+                  Quiero hacer una donación
+                </option>
+                <option value="Quiero sumar a mi empresa">
+                  Quiero sumar a mi empresa
+                </option>
+                <option value="Quiero sumarme al voluntariado">
+                  Quiero sumarme al voluntariado
+                </option>
+              </select>
+            </div>
           </div>
           <div className="formButton">
             <button className="buttonSend">ENVIAR</button>
           </div>
         </div>
-        {/* <div className="p">
-          <p>
-            {" "}
-            Si querés donar por única vez haz click{" "}
-            <a href="/unicaVez">aquí </a>{" "}
-          </p>
-          <hr />
-
-          <p>
-            Todas las donaciones a TECHO son deducibles del Impuesto a las
-            Ganancias según el Art. 81 de la Ley N° 20.628.
-          </p>
-          <p>Política de privacidad.</p>
-        </div> */}
       </div>
+      <hr />
+      <div className="text-center text-white">
+        <p>
+          Todas las donaciones a TECHO son deducibles del Impuesto a las
+          Ganancias según el Art. 81 de la Ley N° 20.628.
+        </p>
+        <p>Política de privacidad.</p>
+      </div>
+      {/* ver fondo blanco al final del div */}
     </div>
   );
 }
