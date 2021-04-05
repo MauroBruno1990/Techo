@@ -9,7 +9,7 @@ export const setUser = createAction('SET_USER')
 
 export const postData = createAsyncThunk(
   "CREATE_USER",
-  ({ name, lastname, email, phone, amount, time }) => {
+  ({ name, lastname, email, phone, amount, time, dni, province, creditCard, typeCard}) => {
     return axios.post(`/api/user`, {
       name,
       lastname,
@@ -17,8 +17,11 @@ export const postData = createAsyncThunk(
       phone,
       amount,
       time,
+      dni,
+      province,
+      creditCard,
+      typeCard,
     })
-    
   }
 );
 
