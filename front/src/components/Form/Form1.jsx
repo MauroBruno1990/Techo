@@ -24,10 +24,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   const telefono = useInput("telefono");
   const [check, setCheck] = useState(0);
 
-  //const [user, setUser] = useState({})
-  //   const [email, setEmail] = useState("")
-  //console.log(user);
-
   const handleClick = (e) => {
     setCheck(e.target.value);
   };
@@ -67,154 +63,180 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   console.log(data);
 
   return (
-    <section id="dona">
-      <div className="formulario containerForm">
-        <form onSubmit={handleSubmit}>
-          <h3> Paso 1/2 </h3>
-          <fieldset>
-            <h2> Selecciona el monto con el cual te querés sumar mensualmente</h2>
+    <div className="container">
+      <div className="card mb-3">
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              src="https://institucional.techo.org/wp-content/uploads/sites/8/2018/02/home-foto-mobile1.jpg"
+              className="img-fluid"
+              alt="Responsive image"
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h3> Paso 1/2 </h3>
+              <h5 className="card-title">Doná</h5>
+              <p className="card-text">
+                Seleccioná el monto con el cual te querés sumar mensualmente
+              </p>
+              <form onSubmit={handleSubmit}>
+                <div
+                  className="btn-toolbar"
+                  role="toolbar"
+                  aria-label="Toolbar with button groups"
+                >
+                  {/* cambiar el active del radio button con el click */}
+                  <div
+                    className="btn-group mr-3"
+                    role="group"
+                    aria-label="First group"
+                  >
+                    {/* <button
+                      name="amount"
+                      type="button"
+                      className="btn btn-outline-primary"
+                      onClick={handleData}
+                      value={500}
+                    >
+                      500 ARS
+                    </button>
+                    <button
+                      name="amount"
+                      type="button"
+                      className="btn btn-outline-primary active"
+                      onClick={handleData}
+                      value={600}
+                    >
+                      600 ARS
+                    </button>
+                    <button
+                      name="amount"
+                      type="button"
+                      className="btn btn-outline-primary"
+                      onClick={handleData}
+                      value={700}
+                    >
+                      700 ARS
+                    </button> */}
+                    <div
+                      class="btn-group"
+                      role="group"
+                      aria-label="Basic radio toggle button group"
+                    >
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        id="btnradio1"
+                        autocomplete="off"
+                        checked
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio1">
+                        Radio 1
+                      </label>
 
-            <button
-              type="button"
-              name="amount"
-              className="botonForm botonHover"
-              onClick={handleData}
-              value={500}
-            >
-              500 ARS
-            </button>
-            <button
-              type="button"
-              name="amount"
-              className="botonDestacado botonHover"
-              onClick={handleData}
-              value={600}
-            >
-              600 ARS
-            </button>
-            <button
-              type="button"
-              name="amount"
-              className="botonForm botonHover"
-              onClick={handleData}
-              value={700}
-            >
-              700 ARS
-            </button>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        id="btnradio2"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio2">
+                        Radio 2
+                      </label>
 
-            <button className="botonOtro botonHover">Otro</button>
-            <input
-              onChange={handleData}
-              value={data.amount}
-              min="0"
-              type="number"
-              id="name"
-              name="amount"
-              required
-              minlength="4"
-              maxlength="8"
-              size="10"
-            ></input>
-
-           {/*  <label for="exampleFormControlInput1" class="form-label">
-              ¿Cada cuánto querés donar?
-              <select
-                as="select"
-                defaultValue="Donar mensualmente"
-                name="time"
-                value={data.time}
-                onChange={handleData}
-                required
-              >
-                <option>...</option>
-                <option value="Donar mensualmente">Donar mensualmente</option>
-                <option value="Por única vez">Por única vez</option>
-              </select>
-            </label> */}
-          </fieldset>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Nombre
-            </label>
-            <input
-              name="name"
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ingrese su nombre"
-              //   {...nombre}
-              onChange={handleData}
-              value={data.name}
-              required
-            />
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="btnradio"
+                        id="btnradio3"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-primary" for="btnradio3">
+                        Radio 3
+                      </label>
+                    </div>
+                  </div>
+                  <div className="input-group">
+                    <div className="input-group-text" id="btnGroupAddon">
+                      ARS
+                    </div>
+                    <input
+                      // limpiar el input cuando selecciono otro botón
+                      name="amount"
+                      type="text"
+                      min="0"
+                      minLength={2}
+                      maxLength={5}
+                      className="form-control"
+                      onChange={handleData}
+                      value={data.amount}
+                      placeholder="Otro monto"
+                      aria-label="Input group example"
+                      aria-describedby="btnGroupAddon"
+                      style={{ width: 150 }}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="form-label mt-3">Nombre</label>
+                  <input
+                    name="name"
+                    type="text"
+                    onChange={handleData}
+                    value={data.name}
+                    className="form-control"
+                    placeholder="Ingrese su nombre"
+                    required
+                  />
+                </div>
+                <div className="mt-3">
+                  <label className="form-label">Apellido</label>
+                  <input
+                    name="lastname"
+                    type="text"
+                    onChange={handleData}
+                    value={data.lastname}
+                    className="form-control"
+                    placeholder="Ingrese su apellido"
+                    required
+                  />
+                </div>
+                <div className="mt-3">
+                  <label className="form-label">Mail</label>
+                  <input
+                    name="email"
+                    type="email"
+                    onChange={handleData}
+                    value={data.email}
+                    className="form-control"
+                    placeholder="Ingrese su mail"
+                    required
+                  />
+                </div>
+                <div className="mt-3">
+                  <label className="form-label">Teléfono</label>
+                  <input
+                    name="phone"
+                    type="number"
+                    onChange={handleData}
+                    value={data.phone}
+                    className="form-control"
+                    placeholder="Ingrese su teléfono"
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary mt-3">
+                  Continuar
+                </button>
+              </form>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Apellido
-            </label>
-            <input
-              name="lastname"
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ingrese su apellido"
-              //   {...apellido}
-              onChange={handleData}
-              value={data.lastname}
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Mail
-            </label>
-            <input
-              name="email"
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ingrese su mail"
-              //   {...mail}
-              onChange={handleData}
-              value={data.email}
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Teléfono
-            </label>
-            <input
-              name="phone"
-              onChange={handleData}
-              value={data.phone}
-              type="number"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ingrese su teléfono"
-              //   {...telefono}
-              required
-            />
-          </div>
-          
-          
-            <button
-              className="botonForm"
-              variant="primary"
-              type="submit"
-              required
-            >
-              Continuar
-            </button>
-            
-            
-          
-         
-          {/* <CarouselForm/> */}{" "}
-          {/* ese es un componente hecho con react-bootstrap */}
-        </form>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
