@@ -1,14 +1,6 @@
 .container {
-    width: 50%;
+    width: 10%;
 }
-
-
-.medium {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 
 .singleButton {
     width: 90px;
@@ -39,4 +31,15 @@
 .p {
     line-height: 0.2;
 }
+
+.divMercadoPago {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .donacionHover:hover {
+    background-color: rgb(215, 142, 1);
+    transition: 0.4s;
+  } */
 

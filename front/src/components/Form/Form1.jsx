@@ -188,6 +188,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                   <a href="/unicaVez">aquí</a>
                 </p>
               </form>
+             <p> Si querés donar por única vez, completá los datos y haz click <a href="/unicaVez">AQUÍ </a> </p>
             </div>
           </div>
         </div>
