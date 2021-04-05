@@ -11,7 +11,7 @@ const MasterForm = () => {
     lastname: "",
     email: "",
     phone: "",
-    amount: "600",
+    amount: "",
     time: "socio",
   });
 
