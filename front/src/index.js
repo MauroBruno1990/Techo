@@ -5,8 +5,9 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./state/store";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/scss/bootstrap.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import { BrowserRouter, Route } from "react-router-dom";
 
 ReactDOM.render(

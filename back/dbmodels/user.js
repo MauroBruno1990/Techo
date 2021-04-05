@@ -20,7 +20,7 @@ const userSchema = new Schema({
   },
   amount: {
     type: Number,
-    required: true,
+    default: 600,
   },
   time: {
     type: String,
