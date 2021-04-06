@@ -38,6 +38,9 @@
     justify-content: space-between;
 }
 
+.imagen {
+    width: 100%;
+} 
 /* .donacionHover:hover {
     background-color: rgb(215, 142, 1);
     transition: 0.4s;

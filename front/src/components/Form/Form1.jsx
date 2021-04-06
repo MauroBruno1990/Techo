@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
 import { useInput } from "../../hooks/useInput";
 import "./index.css";
-import Form2 from "./Form2";
-/* import CarouselForm from './CarouselForm' */
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
@@ -15,18 +13,6 @@ import Form2 from "./Form2";
 const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  // const user = useSelector(state => state.users)
-  const donacion = useInput("donacion");
-  const nombre = useInput("nombre");
-  const apellido = useInput("apellido");
-
-  const mail = useInput("mail");
-  const telefono = useInput("telefono");
-  const [check, setCheck] = useState(0);
-
-  const handleClick = (e) => {
-    setCheck(e.target.value);
-  };
 
   const handleRedirect = (e) => {
     e.preventDefault();
@@ -59,7 +45,16 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     //.then(() => handleContinuar());
   };
 
-  console.log(data);
+  const toggleClass = (e) => {
+    //si tiene la clase active se la saco, split(" ")
+    console.log(e.target.classList);
+    const name = "active";
+    const arr = e.target.className.split(" ");
+    if (arr.indexOf(name) == -1) {
+      e.target.className += " " + name;
+      //continuar
+    }
+  };
 
   return (
     <div className="container">
@@ -80,22 +75,16 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 Seleccioná el monto con el cual te querés sumar mensualmente
               </p>
               <form onSubmit={handleSubmit}>
-                <div
-                  className="btn-toolbar"
-                  role="toolbar"
-                  aria-label="Toolbar with button groups"
-                >
-                  {/* cambiar el active del radio button con el click */}
-                  <div
-                    className="btn-group mr-3"
-                    role="group"
-                    aria-label="First group"
-                  >
-                    {/* <button
+                <div className="btn-toolbar" role="toolbar">
+                  <div className="btn-group me-2 mr-3" role="group">
+                    <button
                       name="amount"
                       type="button"
                       className="btn btn-outline-primary"
-                      onClick={handleData}
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Si logramos que 14 personas donen $500 podemos comprar las herramientas para la construcción"
+                      onClick={(handleData, toggleClass)}
                       value={500}
                     >
                       500 ARS
@@ -104,7 +93,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                       name="amount"
                       type="button"
                       className="btn btn-outline-primary active"
-                      onClick={handleData}
+                      onClick={(handleData, toggleClass)}
                       value={600}
                     >
                       600 ARS
@@ -113,57 +102,17 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                       name="amount"
                       type="button"
                       className="btn btn-outline-primary"
-                      onClick={handleData}
+                      onClick={(handleData, toggleClass)}
                       value={700}
                     >
                       700 ARS
-                    </button> */}
-                    <div
-                      class="btn-group"
-                      role="group"
-                      aria-label="Basic radio toggle button group"
-                    >
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="btnradio"
-                        id="btnradio1"
-                        autocomplete="off"
-                        checked
-                      />
-                      <label class="btn btn-outline-primary" for="btnradio1">
-                        Radio 1
-                      </label>
-
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="btnradio"
-                        id="btnradio2"
-                        autocomplete="off"
-                      />
-                      <label class="btn btn-outline-primary" for="btnradio2">
-                        Radio 2
-                      </label>
-
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="btnradio"
-                        id="btnradio3"
-                        autocomplete="off"
-                      />
-                      <label class="btn btn-outline-primary" for="btnradio3">
-                        Radio 3
-                      </label>
-                    </div>
+                    </button>
                   </div>
                   <div className="input-group">
                     <div className="input-group-text" id="btnGroupAddon">
                       ARS
                     </div>
                     <input
-                      // limpiar el input cuando selecciono otro botón
                       name="amount"
                       type="text"
                       min="0"
@@ -179,6 +128,11 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     />
                   </div>
                 </div>
+                <div
+                  className="btn-toolbar justify-content-between"
+                  role="toolbar"
+                  aria-label="Toolbar with button groups"
+                ></div>
                 <div>
                   <label className="form-label mt-3">Nombre</label>
                   <input
@@ -191,7 +145,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     required
                   />
                 </div>
-                <div className="mt-3">
+                <div className="mt-2">
                   <label className="form-label">Apellido</label>
                   <input
                     name="lastname"
@@ -203,7 +157,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     required
                   />
                 </div>
-                <div className="mt-3">
+                <div className="mt-2">
                   <label className="form-label">Mail</label>
                   <input
                     name="email"
@@ -215,7 +169,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     required
                   />
                 </div>
-                <div className="mt-3">
+                <div className="mt-2">
                   <label className="form-label">Teléfono</label>
                   <input
                     name="phone"
@@ -231,7 +185,11 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                   Continuar
                 </button>
               </form>
-             <p> Si querés donar por única vez, completá los datos y haz click <a href="/unicaVez">AQUÍ </a> </p>
+              <p className="mt-3">
+                {" "}
+                Si querés donar por única vez, completá los datos y hacé click{" "}
+                <a href="/unicaVez">AQUÍ</a>.
+              </p>
             </div>
           </div>
         </div>
