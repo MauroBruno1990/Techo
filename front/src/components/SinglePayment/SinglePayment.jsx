@@ -2,6 +2,8 @@ import React from "react";
 import "./index.css";
 
 export default function SinglePayment() {
+  const valor = "mercadoPago"
+
   return (
     <div className="container">
       <h2>Quiero realizar una donación por única vez</h2>
@@ -47,7 +49,7 @@ export default function SinglePayment() {
         </div>
 
         <div className="columna2">
-          <div className="mercadoPago">
+          <div className={valor}>
             <h3 className="titles">Mercado Pago</h3>
             <img
               src="https://static.wixstatic.com/media/8c9b2b_d1e0cee8b3ba42c5a8962f104c1e0c9e~mv2.png/v1/fill/w_40,h_38,al_c,q_85,usm_0.66_1.00_0.01/logo%20mp.webp"
