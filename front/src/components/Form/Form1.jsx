@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
 import { useInput } from "../../hooks/useInput";
 import "./index.css";
-import Form2 from "./Form2";
-/* import CarouselForm from './CarouselForm' */
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
@@ -49,13 +47,13 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const toggleClass = (e) => {
     //si tiene la clase active se la saco, split(" ")
-    console.log(e.target.classList)
+    console.log(e.target.classList);
     const name = "active";
     const arr = e.target.className.split(" ");
     if (arr.indexOf(name) == -1) {
       e.target.className += " " + name;
       //continuar
-    } 
+    }
   };
 
   return (
@@ -83,6 +81,9 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                       name="amount"
                       type="button"
                       className="btn btn-outline-primary"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Si logramos que 14 personas donen $500 podemos comprar las herramientas para la construcción"
                       onClick={(handleData, toggleClass)}
                       value={500}
                     >
@@ -183,12 +184,12 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 <button type="submit" className="btn btn-primary mt-3">
                   Continuar
                 </button>
-                <p className="mt-3">
-                  Si desea donar una unica vez haga click{" "}
-                  <a href="/unicaVez">aquí</a>
-                </p>
               </form>
-             <p> Si querés donar por única vez, completá los datos y haz click <a href="/unicaVez">AQUÍ </a> </p>
+              <p className="mt-3">
+                {" "}
+                Si querés donar por única vez, completá los datos y hacé click{" "}
+                <a href="/unicaVez">AQUÍ</a>.
+              </p>
             </div>
           </div>
         </div>
