@@ -143,7 +143,6 @@ export default function Footer() {
           </div>
         </div>
         <div className="p">
-        <p> Si querés donar por única vez haz click <a href="/unicaVez">aquí </a> </p>
         <hr/>
         
           <p>

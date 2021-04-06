@@ -13,6 +13,10 @@ const MasterForm = () => {
     phone: "",
     amount: "",
     time: "socio",
+    dni:"",
+    province:"",
+    creditCard:"",
+    typeCard:"",
   });
 
   //   const handleCallback = (mail) => {
@@ -44,7 +48,11 @@ const MasterForm = () => {
             data={data}
           />
         )}
-        {item == 1 && <Form2 handleVolver={handleVolver} />}
+        {item == 1 && <Form2 
+        handleVolver={handleVolver} 
+        handleData={handleData} 
+        data={data}
+        />}
         {<p className="centerText">
         {" "}
         Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
