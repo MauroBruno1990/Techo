@@ -5,7 +5,6 @@
     color: white;
 }
 
-
 .containerDiv {
     display: flex;
     flex-direction: row;
@@ -68,9 +67,8 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
-.p {
-    line-height: 0.5;
+.inputWidth {
+    width: 100px;
 }

@@ -20,7 +20,8 @@ function scrollFunction() {
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbarProp" id="header">
+    
+    <nav className="navbar navbar-expand-lg  navbarProp navbar-dark" id="header">
       <a className="navbar-brand" href="http://localhost:3000/">
         <img
           src="https://www.techo.org/UY/assets/images/logo_1.png"
@@ -66,13 +67,17 @@ export default function Navbar() {
           </li>
           <li className="nav-item dropdown"></li>
         </ul>
-        <span className="d-flex botonDona btnHover">
+    {/*     <div className="botonDona">
+        <span className=" btnHover">
           <Link to="dona" smooth duration ={1000}>
           <button className="btn" type="submit" >
             <span className="letraBtn">Doná</span>
+            
           </button>
+        
           </Link>
         </span>
+        </div> */}
       </div>
     </nav>
   );

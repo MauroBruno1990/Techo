@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
+import CarrouselTestimony from "../CarrouselTestimony/CarrouselTestimony";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 
 const MasterForm = () => {
-  //   const [email, setEmail] = useState("");
+  //const [email, setEmail] = useState("");
   const [item, setItem] = useState(0);
   const [data, setData] = useState({
     name: "",
@@ -13,15 +14,15 @@ const MasterForm = () => {
     phone: "",
     amount: "",
     time: "socio",
-    dni:"",
-    province:"",
-    creditCard:"",
-    typeCard:"",
+    dni: "",
+    province: "",
+    creditCard: "",
+    typeCard: "",
   });
 
-  //   const handleCallback = (mail) => {
-  //     setEmail(mail);
-  //   };
+  // const handleCallback = (mail) => {
+  //   setEmail(mail);
+  // };
 
   const handleContinuar = () => {
     setItem(item + 1);
@@ -48,17 +49,23 @@ const MasterForm = () => {
             data={data}
           />
         )}
-        {item == 1 && <Form2 
-        handleVolver={handleVolver} 
-        handleData={handleData} 
-        data={data}
-        />}
-        {<p className="centerText">
-        {" "}
-        Todas las donaciones a TECHO son deducibles del Impuesto a las Ganancias
-        según el Art. 81 de la Ley N° 20.628. Política de privacidad.
-      </p>}
+        {item == 1 && (
+          <Form2
+            handleVolver={handleVolver}
+            handleData={handleData}
+            data={data}
+          />
+        )}
+        {
+          <p className="centerText">
+            {" "}
+            Todas las donaciones a TECHO son deducibles del Impuesto a las
+            Ganancias según el Art. 81 de la Ley N° 20.628. Política de
+            privacidad.
+          </p>
+        }
       </div>
+      <CarrouselTestimony />
     </>
   );
 };
