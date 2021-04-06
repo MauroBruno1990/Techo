@@ -6,6 +6,7 @@ import { useInput } from "../../hooks/useInput";
 import "./index.css";
 import SinglePayment from "../SinglePayment/SinglePayment";
 
+
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
 // Al apretar continuar, esta primera información debería ser guardada, sin importar si la persona realiza una donación o no.
@@ -191,6 +192,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               <p className="mt-3">
                 {" "}
                 Si querés donar por única vez, completá los datos y hacé click{" "}
+
                 <a  
                 
                 type="button"

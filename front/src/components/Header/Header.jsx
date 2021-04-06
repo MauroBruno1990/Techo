@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.css";
+
 import { Link } from "react-scroll";
+
 export default function Header() {
   return (
     <>
@@ -10,6 +12,7 @@ export default function Header() {
         alt=""
         className="img-fluid"
       />
+
 
 <div className="botonDona">
         <span className=" btnHover">
@@ -22,6 +25,7 @@ export default function Header() {
           </Link>
         </span>
         </div>
+
     </>
   );
 }

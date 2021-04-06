@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import "./index.css";
@@ -109,6 +110,7 @@ export default function SinglePayment() {
                         <b>HIPOTECARIO S.A. (SWIFT: BHIPARBAXXX) </b> <br />
                       </p>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -116,6 +118,7 @@ export default function SinglePayment() {
           </div>
         </div>
       </div>
+
     </>
   );
 }
