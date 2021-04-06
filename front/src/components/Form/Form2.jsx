@@ -37,8 +37,7 @@ const Form2 = ({ handleVolver, handleData, data }) => {
     );
     //.then(() => handleContinuar());
   };
-
-  console.log(data, "dataaaaaaaaaaaaa form 2");
+ console.log(data, "dataaaaaaaaaaaaa form 2");
   return (
     <div className="formulario">
       <h3> Paso 2/2 </h3>

@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
 import { useInput } from "../../hooks/useInput";
 import "./index.css";
+import SinglePayment from "../SinglePayment/SinglePayment";
+
 
 // Este componente debería poder recibir el input del Nombre, Apellido, Mail y Teléfono de la persona.
 // Debería poder guardar esa información en una base de datos.
@@ -44,6 +46,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     );
     //.then(() => handleContinuar());
   };
+  console.log(postData);
 
   const toggleClass = (e) => {
     //si tiene la clase active se la saco, split(" ")
@@ -57,7 +60,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" id= "dona">
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
@@ -67,6 +70,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               alt="Responsive image"
             />
           </div>
+
           <div className="col-md-8">
             <div className="card-body">
               <h3> Paso 1/2 </h3>
@@ -188,8 +192,63 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
               <p className="mt-3">
                 {" "}
                 Si querés donar por única vez, completá los datos y hacé click{" "}
-                <a href="/unicaVez">AQUÍ</a>.
+
+                <a  
+                
+                type="button"
+                /* class="btn btn-primary" */
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+                
+                
+                href="/unicaVez">aqui</a>.
+              {/* <button
+                type="button"
+                 class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+              >
+                AQUÍ
+              </button> */}
               </p>
+
+              <div
+                class="modal fade"
+                id="exampleModalCenter"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <SinglePayment />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
