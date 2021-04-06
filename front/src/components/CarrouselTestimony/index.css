@@ -10,6 +10,10 @@ h1 {
   color: #555555;
 }
 
+.card-message{
+  border: solid 1px red;
+  color: red;
+}
 
 /*Carousel*/
 .carrousel {

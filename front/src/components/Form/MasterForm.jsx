@@ -40,7 +40,6 @@ const MasterForm = () => {
 
   return (
     <>
-      <Header />
       <div className="masterForm">
         {item == 0 && (
           <Form1
