@@ -1,6 +1,4 @@
-.container {
-    width: 10%;
-}
+
 
 .singleButton {
     width: 90px;
@@ -27,7 +25,10 @@
     display: flex;
     flex-direction: row;
 }
-
+.logoMP{
+    width:40px;
+    height:40px;
+}
 .p {
     line-height: 0.2;
 }
@@ -46,3 +47,24 @@
     transition: 0.4s;
   } */
 
+
+  @media (max-width: 600px) {
+    .singleButton {
+        width: 60px;
+        height: 35px;
+        margin: 5px;
+        font-size: small;
+    }
+
+    .titles{
+        font-size: 14px;
+    }
+
+    .parrafo {
+        font-size: 10px;
+    }
+    .logoMP{
+        width:20px;
+        height:20px;
+    }
+  }

@@ -1,11 +1,25 @@
 .formulario{
     border-radius: 25px;
-    width: 50%;
-    margin-left: 23%;
+    width: 40%;
+    /* margin-left: 23%; */
     padding: 20px;
     border: 1px solid;
     border-color: #2596be;
     background-color: #2595be2d;
+    margin-top: 50px;
+}
+
+
+.botonDonar{
+    background-color:#2596be;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 80%;
+    margin-right: 2%;
+   
+   
 }
 
 .botonVolver{
@@ -15,15 +29,20 @@
     border-radius: 10px;
     color: white;
     border: none;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .botonForm{
     height: 65px; 
     background-color: #2596be;
-    margin: 2%;
     border-radius: 10px;
     color: white;
     border: none;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .botonDestacado {
@@ -52,11 +71,15 @@
 
 .inputForm{
     border-radius: 25px;
+    margin-bottom: 10px;
 }
 
 .containerForm{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
 }
 
 .masterForm {
@@ -77,3 +100,18 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 } 
 
+.modalThanks{
+    background-color: #2596be;
+    background-image: url('https://institucional.techo.org/wp-content/uploads/2017/11/voluntario-back.jpg');
+    border: none;
+    color: white;
+    height: 400px;
+}
+
+.descriptivo{
+    font-size: 3em;
+}
+
+.disabledButton:disabled{
+    background-color: red;
+}

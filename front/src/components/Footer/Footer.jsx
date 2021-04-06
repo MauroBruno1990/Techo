@@ -80,7 +80,10 @@ export default function FooterDos() {
             </a>
           </div>
         </div>
-        <div className="col-md-8">
+
+        <div className="col-md-8" id="contacto">
+
+ 
           <h3 className="text-center text-white mb-3 mt-3">CONTACTO</h3>
           <div className="row mb-3 ml-5">
             <div className="col-sm-6">
