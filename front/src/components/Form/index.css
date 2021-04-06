@@ -77,3 +77,18 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 } 
 
+.modalThanks{
+    background-color: #2596be;
+    background-image: url('https://institucional.techo.org/wp-content/uploads/2017/11/voluntario-back.jpg');
+    border: none;
+    color: white;
+    height: 400px;
+}
+
+.descriptivo{
+    font-size: 3em;
+}
+
+.disabledButton:disabled{
+    background-color: red;
+}

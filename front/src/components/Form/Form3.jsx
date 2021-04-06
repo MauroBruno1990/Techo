@@ -1,8 +1,8 @@
-import { Button } from 'react-bootstrap';
 import React from 'react'
 
-const Form3 = () => {
+const Form3 = ({ data }) => {
 
+    console.log(data.name)
     return (
         <div>
            Gracias por donar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 

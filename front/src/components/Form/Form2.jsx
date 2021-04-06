@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useInput } from "../../hooks/useInput";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
-import isValidCard from "../../hooks/isValidCard";
+import ReactGA from 'react-ga'
 
 const Form2 = ({ handleVolver, handleData, data }) => {
   const history = useHistory();
@@ -17,6 +17,11 @@ const Form2 = ({ handleVolver, handleData, data }) => {
   //     e.preventDefault();
   //     handleVolver
   //   };
+
+  useEffect(() => {
+    ReactGA.initialize('UA-26808512-1');
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,14 +48,14 @@ const Form2 = ({ handleVolver, handleData, data }) => {
     <div className="formulario">
       <h3> Paso 2/2 </h3>
       <form onSubmit={handleSubmit}>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" className="form-label">
             DNI
           </label>
           <input
             name="dni"
             type="number"
-            class="form-control"
+            className="form-control"
             id="exampleFormControlInput1"
             placeholder="Ingrese su DNI"
             onChange={handleData}
@@ -58,100 +63,91 @@ const Form2 = ({ handleVolver, handleData, data }) => {
             required
           />
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" className="form-label">
             Provincia
           </label>
-          {/* <input
-            name="province"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ingrese su provincia"
-            onChange={handleData}
-            value={data.province}
-            required
-          /> */}
-          <select name="province" onChange={handleData} value={data.province} 
-          class="form-select" aria-label="Default select example">
-          <option value="Buenos Aires">Bs. As.</option>
-          <option value="Catamarca">Catamarca</option>
-          <option value="Chaco">Chaco</option>
-          <option value="Chubut">Chubut</option>
-          <option value="Cordoba">Cordoba</option>
-          <option value="Corrientes">Corrientes</option>
-          <option value="Entre Rios">Entre Rios</option>
-          <option value="Formosa">Formosa</option>
-          <option value="Jujuy">Jujuy</option>
-          <option value="La Pampa">La Pampa</option>
-          <option value="La Rioja">La Rioja</option>
-          <option value="Islas Malvinas">Islas Malvinas</option>
-          <option value="Mendoza">Mendoza</option>
-          <option value="Misiones">Misiones</option>
-          <option value="Neuquen">Neuquen</option>
-          <option value="Rio Negro">Rio Negro</option>
-          <option value="Salta">Salta</option>
-          <option value="San Juan">San Juan</option>
-          <option value="San Luis">San Luis</option>
-          <option value="Santa Cruz">Santa Cruz</option>
-          <option value="Santa Fe">Santa Fe</option>
-          <option value="Sgo. del Estero">Sgo. del Estero</option>
-          <option value="Tierra del Fuego">Tierra del Fuego</option>
-         <option value="Tucuman">Tucuman</option>
+          <select name="province" onChange={handleData} value={data.province}
+            className="form-select" aria-label="Default select example">
+            <option value="Buenos Aires">Bs. As.</option>
+            <option value="Catamarca">Catamarca</option>
+            <option value="Chaco">Chaco</option>
+            <option value="Chubut">Chubut</option>
+            <option value="Cordoba">Cordoba</option>
+            <option value="Corrientes">Corrientes</option>
+            <option value="Entre Rios">Entre Rios</option>
+            <option value="Formosa">Formosa</option>
+            <option value="Jujuy">Jujuy</option>
+            <option value="La Pampa">La Pampa</option>
+            <option value="La Rioja">La Rioja</option>
+            <option value="Islas Malvinas">Islas Malvinas</option>
+            <option value="Mendoza">Mendoza</option>
+            <option value="Misiones">Misiones</option>
+            <option value="Neuquen">Neuquen</option>
+            <option value="Rio Negro">Rio Negro</option>
+            <option value="Salta">Salta</option>
+            <option value="San Juan">San Juan</option>
+            <option value="San Luis">San Luis</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Sgo. del Estero">Sgo. del Estero</option>
+            <option value="Tierra del Fuego">Tierra del Fuego</option>
+            <option value="Tucuman">Tucuman</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" className="form-label">
             Numero de la tarjeta
           </label>
           <input
             name="creditCard"
             type="number"
-            class="form-control"
+            className="form-control"
             id="exampleFormControlInput1"
             placeholder="Ingrese el numero de la tarjeta"
             onChange={handleData}
             value={data.creditCard}
-            maxlength="16" oninput= {data.creditCard.length > 16 ? data.creditCard = data.creditCard.slice(0, 16) : null }
+            maxlength="16" 
+            oninput={data.creditCard.length > 16 ? data.creditCard = data.creditCard.slice(0, 16) : null}
             required
           />
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" className="form-label">
             Tipo de tarjeta
           </label>
-         
+
           <select name="typeCard" onChange={handleData} value={data.typeCard}
-          class="form-select" aria-label="Default select example">
-            <option value="" disabled="" class="_1uxfS _36dZ-"></option>
-            <option value="Visa Crédito" class="_1uxfS">
+            className="form-select" aria-label="Default select example">
+            <option value="" disabled="" className="_1uxfS _36dZ-"></option>
+            <option value="Visa Crédito" className="_1uxfS">
               Visa Crédito
             </option>
-            <option value="Visa Débito" class="_1uxfS">
+            <option value="Visa Débito" className="_1uxfS">
               Visa Débito
             </option>
-            <option value="Mastercard" class="_1uxfS">
+            <option value="Mastercard" className="_1uxfS">
               Mastercard
             </option>
-            <option value="American Express" class="_1uxfS">
+            <option value="American Express" className="_1uxfS">
               American Express
             </option>
-            <option value="Cabal" class="_1uxfS">
+            <option value="Cabal" className="_1uxfS">
               Cabal
             </option>
-            <option value="Naranja" class="_1uxfS">
+            <option value="Naranja" className="_1uxfS">
               Naranja
             </option>
-            <option value="Nevada" class="_1uxfS">
+            <option value="Nevada" className="_1uxfS">
               Nevada
             </option>
-            <option value="Shopping" class="_1uxfS">
+            <option value="Shopping" className="_1uxfS">
               Shopping
             </option>
-            <option value="Nativa" class="_1uxfS">
+            <option value="Nativa" className="_1uxfS">
               Nativa
             </option>
-            <option value="Cencosud" class="_1uxfS">
+            <option value="Cencosud" className="_1uxfS">
               Cencosud
             </option>
           </select>
@@ -165,9 +161,42 @@ const Form2 = ({ handleVolver, handleData, data }) => {
         >
           Volver
         </button>
-        <button className="botonForm" variant="primary" type="submit" required>
-          Quiero ser socio/a
+        <button 
+          className="botonForm disabledButton" 
+          variant="primary" 
+          type="submit" 
+          data-toggle="modal" 
+          data-target="#exampleModalCenter" 
+          required
+          disabled={data.dni === '' || data.province === '' || data.creditCard === '' || data.typeCard === '' ? 
+          true
+          : 
+          false}
+        >
+            Quiero ser socio/a
         </button>
+
+        <div className="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered " role="document">
+            <div className="modal-content ">
+              <div className="modalThanks">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLongTitle">Gracias {data.name} por hacerte socio de Techo</h5>
+                  {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button> */}
+                  <img src=""></img>
+                </div>
+                <div className="modal-body descriptivo">   Gracias por su donación   </div>
+                <div className="modal-footer">
+                  
+                  <a  href="/" type="button" className="btn btn-primary">Volver a inicio </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </form>
     </div>
   );
