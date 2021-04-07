@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useInput } from "../../hooks/useInput";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../state/reducers/user";
-import ReactGA from 'react-ga'
+import ReactGA from "react-ga";
 
 const Form2 = ({ handleVolver, handleData, data }) => {
   const history = useHistory();
@@ -19,9 +19,8 @@ const Form2 = ({ handleVolver, handleData, data }) => {
   //   };
 
   useEffect(() => {
-    ReactGA.initialize('UA-26808512-1');
+    ReactGA.initialize("UA-26808512-1");
   }, []);
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -221,41 +220,72 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                   >
                     Volver
                   </button>
-                  <button 
-          className="botonForm disabledButton" 
-          variant="primary" 
-          type="submit" 
-          data-toggle="modal" 
-          data-target="#exampleModalCenter" 
-          required
-          disabled={data.dni === '' || data.province === '' || data.creditCard === '' || data.typeCard === '' ? 
-          true
-          : 
-          false}
-        >
-            Quiero ser socio/a
-        </button>
-<div className="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div className="modal-dialog modal-dialog-centered " role="document">
-            <div className="modal-content ">
-              <div className="modalThanks">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLongTitle">Gracias {data.name} por hacerte socio de Techo</h5>
-                  {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <button
+                    className="botonForm disabledButton"
+                    variant="primary"
+                    type="submit"
+                    data-toggle="modal"
+                    data-target="#exampleModalCenter"
+                    required
+                    disabled={
+                      data.dni === "" ||
+                      data.province === "" ||
+                      data.creditCard === "" ||
+                      data.typeCard === ""
+                        ? true
+                        : false
+                    }
+                  >
+                    Quiero ser socio/a
+                  </button>
+                  <div
+                    className="modal fade "
+                    id="exampleModalCenter"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                  >
+                    <div
+                      className="modal-dialog modal-dialog-centered "
+                      role="document"
+                    >
+                      <div className="modal-content ">
+                        <div className="modalThanks">
+                          <div className="modal-header">
+                            <h5
+                              className="modal-title"
+                              id="exampleModalLongTitle"
+                            >
+                              Gracias {data.name} por hacerte socio de Techo
+                            </h5>
+                            {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button> */}
-                  <img src=""></img>
-                </div>
-                <div className="modal-body descriptivo">   Gracias por su donación   </div>
-                <div className="modal-footer">
-                  
-                  <a  href="/" type="button" className="btn btn-primary">Volver a inicio </a>
+                            <img src=""></img>
+                          </div>
+                          <div className="modal-body descriptivo">
+                            {" "}
+                            Gracias por su donación{" "}
+                          </div>
+                          <div className="modal-footer">
+                            <a
+                              href="/"
+                              type="button"
+                              className="btn btn-primary"
+                            >
+                              Volver a inicio{" "}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-                </form>
       </div>
     </>
   );
