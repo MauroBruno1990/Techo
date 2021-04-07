@@ -5,6 +5,9 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Reality from "./components/Reality/Reality";
 
+import Numbers from "./components/Numbers/Numbers";
+
+
 function App() {
   return (
     <div>
@@ -16,7 +19,12 @@ function App() {
         </Switch>
         <Redirect from="/" to="/Techo" />
       </BrowserRouter>
+
       <Reality />
+
+
+      <Numbers />
+
       <Footer />
     </div>
   );
