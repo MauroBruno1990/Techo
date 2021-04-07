@@ -223,14 +223,17 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                   </button>
                   <button
 
+
                     className="btn btn-primary mt-3 mr-3 boton disabledButton"
                     id='submitBtn '
+
 
                     variant="primary"
                     type="submit"
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
                     required
+
 
                     disabled={data.dni === '' || data.province === '' || data.creditCard === '' || data.typeCard === '' ?
                       true
@@ -246,18 +249,25 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                           <div className="modalHeader">
                             <h5 className="modal-title" id="exampleModalLongTitle">Gracias {data.name} por hacerte socio de Techo</h5>
 
+
                             {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button> */}
                             <img src=""></img>
                           </div>
 
+
                           <div className=" descriptivo">   Gracias por su donación   </div>
                           <div className="modalFooter">
 
                             <a href="/" type="button" className="btn btn-primary">Volver a inicio </a>
                         
+<<<<<<< HEAD
                             
+=======
+
+                            </a>
+>>>>>>> 09bfbed62255267ed3141b99bc2a513546d5cc53
                           </div>
                         </div>
                       </div>
