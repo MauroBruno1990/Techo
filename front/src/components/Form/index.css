@@ -101,17 +101,66 @@ input[type=number]::-webkit-outer-spin-button {
 } 
 
 .modalThanks{
-    background-color: #2596be;
-    background-image: url('https://institucional.techo.org/wp-content/uploads/2017/11/voluntario-back.jpg');
-    border: none;
+    background-color: #000000;
+    /* background-image: url('foto.JPG'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('foto.JPG');
+    border: 10px solid;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
     color: white;
     height: 400px;
 }
 
-.descriptivo{
-    font-size: 3em;
+.modalHeader{
+    margin-left: 2%;
+    margin-top: 4%;
 }
 
-.disabledButton:disabled{
-    background-color: red;
+.modalFooter{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.descriptivo{
+    display: flex;
+    font-size: 3em;
+    justify-content: center ;
+    align-content: center;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+#submitBtn{
+    background-color: #f37254;
+}
+
+.btn-warning{
+    background-color: #f37254 !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-warning:hover{
+    background-color: #f7603e !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-primary{
+    background-color: rgb(0, 146, 221) !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-primary:hover{
+    background-color: rgb(1, 116, 173) !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-primary:disabled{
+    background-color: rgb(0, 146, 221) !important;
+    color: white !important;
+    border-color: white !important;
 }
