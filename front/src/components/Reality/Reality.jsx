@@ -10,9 +10,11 @@ const Reality = () => {
             {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3ycnesZrlMJPamrG0iwYh20ePQGw8h4SyA&usqp=CAU" className="card-img-top s-img" alt="servicio-eléctrico" /> */}
             <div className="card-body">
               <h5 className="card-title2">72%</h5>
+
               <p className="card-text">
                 Sin acceso formal al servicio de energía
               </p>
+
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 .card-title2{
+
     border: none;
     width: 150px;
     height: 150px;
@@ -12,6 +13,7 @@
     @media(max-width: 767px;){
         margin-left: 20%
     }
+
 }
 
 .card-title2:hover{
