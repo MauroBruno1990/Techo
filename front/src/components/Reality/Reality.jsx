@@ -4,16 +4,6 @@ import "./index.css";
 const Reality = () => {
   return (
     <>
-    <div className="container-fluid">
-      <div className= "row">
-      <p className="texto-aporte col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        Hacé un aporte mensual para apoyar el trabajo que realizamos de forma
-        continua en los barrios populares de Argentina durante la pandemia.
-      </p>
-
-      </div>
-    </div>
-
       <div className="container-fluid reality-center">
         <div className="row">
           <div className="card img-reality col-lg-3 col-md-4 col-sm-6 col-xs-12">

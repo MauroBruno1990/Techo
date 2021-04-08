@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Reality from "./components/Reality/Reality";
 
 import Numbers from "./components/Numbers/Numbers";
+import { Banner1 } from "./components/Banner/Banner1";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div>
       <Navbar />
       <Header />
+      <Banner1 />
       <BrowserRouter>
         <Switch>
           <Route exact path="/Techo" component={MasterForm} />
