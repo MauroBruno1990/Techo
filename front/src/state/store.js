@@ -3,10 +3,13 @@ import logger from "redux-logger";
 import userReducer from "./reducers/user";
 
 const store = configureStore({
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-    reducer: {
-      user: userReducer,
-    },
-  });
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(logger),
+  reducer: {
+    user: userReducer,
+  },
+});
 
-  export default store
+export default store;
