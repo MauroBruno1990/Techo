@@ -4,11 +4,13 @@ import CountUp from "react-countup";
 
 
 export default function Numbers() {
+
+
     return (
         <>
             <div className="container-fluid justify-content-md-center mb-5">
             <h2 className="title">Cifras TECHO</h2>
-                <div className="row col-md-12 justify-content-md-center mt-5">
+                <div className="row justify-content-md-center mt-5">
                     <div className="cardBox col-xl-2  cardBackground" >
                         <div className="card-body">
                             <CountUp start={0} end={165.000} delay={0} duration={2.75} decimal="."  decimals={3}>
