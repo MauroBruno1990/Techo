@@ -243,7 +243,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 Si querés donar por única vez, completá los datos y hacé click{" "}
                 <a
                   type="button"
-                  /* class="btn btn-primary" */
+                  /* className="btn btn-primary" */
                   data-toggle="modal"
                   data-target="#exampleModalCenter"
                   href="/unicaVez"
@@ -252,32 +252,32 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 </a>
               </p>
               <div
-                class="modal fade"
+                className="modal fade mt-5"
                 id="exampleModalCenter"
                 tabindex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true"
               >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                  <div className="modal-content">
+                    <div className="modal-header">
                       <button
                         type="button"
-                        class="close"
+                        className="close"
                         data-dismiss="modal"
                         aria-label="Close"
                       >
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                       <SinglePayment />
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                       <button
                         type="button"
-                        class="btn btn-secondary"
+                        className="btn btn-secondary"
                         data-dismiss="modal"
                       >
                         Close
