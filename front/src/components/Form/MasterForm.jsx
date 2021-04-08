@@ -36,7 +36,7 @@ const MasterForm = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <>
@@ -64,7 +64,7 @@ const MasterForm = () => {
           </p>
         }
       </div>
-      <CarrouselTestimony />
+     
     </>
   );
 };

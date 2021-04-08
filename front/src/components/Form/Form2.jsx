@@ -106,7 +106,8 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                       value={data.province}
                       className="form-select"
                       aria-label="Default select example"
-                    >
+                    > 
+                      <option value={null}>...</option>
                       <option value="Buenos Aires">Bs. As.</option>
                       <option value="Catamarca">Catamarca</option>
                       <option value="Chaco">Chaco</option>
@@ -214,68 +215,55 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                     Continuar
                   </button> */}
                   <button
-                    className="btn btn-secondary mt-3 mr-3"
+                    className="btn btn-warning mt-3 mr-3"
                     type="button"
                     onClick={() => handleVolver()}
                   >
                     Volver
                   </button>
                   <button
-                    className="botonForm disabledButton"
+
+
+
+                    className="btn btn-primary mt-3 mr-3 boton disabledButton"
+                    id='submitBtn '
+
+
                     variant="primary"
                     type="submit"
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
                     required
-                    disabled={
-                      data.dni === "" ||
-                      data.province === "" ||
-                      data.creditCard === "" ||
-                      data.typeCard === ""
-                        ? true
-                        : false
-                    }
+
+
+
+                    disabled={data.dni === '' || data.province === '' || data.creditCard === '' || data.typeCard === '' ?
+                      true
+                      :
+                      false}
                   >
                     Quiero ser socio/a
                   </button>
-                  <div
-                    className="modal fade "
-                    id="exampleModalCenter"
-                    tabindex="-1"
-                    role="dialog"
-                    aria-labelledby="exampleModalCenterTitle"
-                    aria-hidden="true"
-                  >
-                    <div
-                      className="modal-dialog modal-dialog-centered "
-                      role="document"
-                    >
+                  <div className="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered " role="document">
                       <div className="modal-content ">
-                        <div className="modalThanks">
-                          <div className="modal-header">
-                            <h5
-                              className="modal-title"
-                              id="exampleModalLongTitle"
-                            >
-                              Gracias {data.name} por hacerte socio de Techo
-                            </h5>
+                        <div className="modalThanks img-fluid">
+                          <div className="modalHeader">
+                            <h5 className="modal-title" id="exampleModalLongTitle">Gracias {data.name} por hacerte socio de Techo</h5>
+
+
                             {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button> */}
                             <img src=""></img>
                           </div>
-                          <div className="modal-body descriptivo">
-                            {" "}
-                            Gracias por su donación{" "}
-                          </div>
-                          <div className="modal-footer">
-                            <a
-                              href="/"
-                              type="button"
-                              className="btn btn-primary"
-                            >
-                              Volver a inicio{" "}
-                            </a>
+
+
+                          <div className=" descriptivo">   Gracias por su donación   </div>
+                          <div className="modalFooter">
+
+                            <a href="/" type="button" className="btn btn-primary">Volver a inicio </a>
+                        
                           </div>
                         </div>
                       </div>
