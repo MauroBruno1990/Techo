@@ -56,7 +56,7 @@ const MasterForm = () => {
           />
         )}
         {
-          <p className="centerText">
+          <p className="container centerText">
             {" "}
             Todas las donaciones a TECHO son deducibles del Impuesto a las
             Ganancias según el Art. 81 de la Ley N° 20.628. Política de

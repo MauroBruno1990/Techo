@@ -6,12 +6,13 @@ import { Link } from "react-scroll";
 export default function Header() {
   return (
     <>
+    <div className="imagen">
       {/* <img src="construccion.jpg" alt="" className="img-fluid" /> */}
-      <img
-        src="https://www.techo.org/UY/assets/images/background/header.jpg"
+     {/*  <img
+      src="https://www.techo.org/UY/assets/images/background/header.jpg" 
         alt=""
-        className="img-fluid"
-      />
+        className="imgagen"
+      /> */}
 
 
 <div className="botonDona">
@@ -24,6 +25,7 @@ export default function Header() {
         
           </Link>
         </span>
+        </div>
         </div>
     </>
   );
