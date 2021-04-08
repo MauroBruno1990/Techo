@@ -6,6 +6,7 @@ import "./index.css";
 export default function SinglePayment() {
   return (
     <>
+        
       <div className="container">
         <div className="container mb-2">
           <h4 className="h4">Quiero realizar una donación por única vez</h4>
@@ -118,7 +119,7 @@ export default function SinglePayment() {
           </div>
         </div>
       </div>
-
+  
     </>
   );
 }

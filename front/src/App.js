@@ -7,19 +7,25 @@ import Reality from "./components/Reality/Reality";
 
 import Numbers from "./components/Numbers/Numbers";
 
+import Testimony from "./components/CarrouselTestimony/Testimony";
+
+import { Banner1 } from "./components/Banner/Banner1";
+
+
 
 function App() {
   return (
     <div>
       <Navbar />
       <Header />
+      <Banner1 />
       <BrowserRouter>
         <Switch>
           <Route exact path="/Techo" component={MasterForm} />
         </Switch>
         <Redirect from="/" to="/Techo" />
       </BrowserRouter>
-
+        <Testimony/>
       <Reality />
 
 

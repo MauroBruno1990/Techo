@@ -1,15 +1,26 @@
-import React from 'react'
-import videoSource from "../../assets/institucional.mp4"
+import React from "react";
+import videoSource from "../../assets/techo.mp4";
+import imgSource from "../../assets/construccion.jpg";
 
+import "./index.css";
 
 const BackgroundVideo = () => {
-    return (
-        <div>
-            <video autoPlay="autoplay" loop="loop" muted className="img-fluid" width="100%">
-                <source src={videoSource}/>
-            </video>
-        </div>
-    )
-}
+  return (
+    <div>
+      <img src={imgSource} alt="" className="img-fluid img-header" />
+      <video
+        label="720p"
+        autoPlay="autoplay"
+        loop="loop"
+        muted
+        className="img-fluid"
+        width="100%"
+        type="video/mp4"
+      >
+        <source src={videoSource} />
+      </video>
+    </div>
+  );
+};
 
-export default BackgroundVideo
+export default BackgroundVideo;
