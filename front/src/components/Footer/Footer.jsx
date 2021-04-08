@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
 
-export default function FooterDos() {
+export default function Footer() {
   return (
     <div className="bg-primary" id="contacto">
       <div className="container">
-        <div className="container-fluid  bg-primary">
+        <div className="container-fluid bg-primary">
           <div className="row">
            
               <div className="col-md-4 mt-4">
