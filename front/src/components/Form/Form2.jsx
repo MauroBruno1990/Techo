@@ -224,6 +224,7 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                   <button
 
 
+
                     className="btn btn-primary mt-3 mr-3 boton disabledButton"
                     id='submitBtn '
 
@@ -233,6 +234,7 @@ const Form2 = ({ handleVolver, handleData, data }) => {
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
                     required
+
 
 
                     disabled={data.dni === '' || data.province === '' || data.creditCard === '' || data.typeCard === '' ?
@@ -262,8 +264,11 @@ const Form2 = ({ handleVolver, handleData, data }) => {
 
                             <a href="/" type="button" className="btn btn-primary">Volver a inicio </a>
                         
+<<<<<<< HEAD
 
                             
+=======
+>>>>>>> 94bf2471bc7fce0d5eac150e586330a87f987047
                           </div>
                         </div>
                       </div>
