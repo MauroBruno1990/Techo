@@ -264,11 +264,6 @@ const Form2 = ({ handleVolver, handleData, data }) => {
 
                             <a href="/" type="button" className="btn btn-primary">Volver a inicio </a>
                         
-<<<<<<< HEAD
-
-                            
-=======
->>>>>>> 94bf2471bc7fce0d5eac150e586330a87f987047
                           </div>
                         </div>
                       </div>
