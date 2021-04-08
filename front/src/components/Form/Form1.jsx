@@ -12,20 +12,20 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
 
   const [amountFlag, setAmountFlag] = useState(1000);
 
-  const handleRedirect = (e) => {
-    e.preventDefault();
-    dispatch(
-      postData({
-        name: data.name,
-        lastname: data.lastname,
-        email: data.email,
-        phone: data.phone,
-        amount: data.amount,
-        time: data.time,
-      })
-    );
-    history.push("/unicavez");
-  };
+  // const handleRedirect = (e) => {
+  //   e.preventDefault();
+  //   dispatch(
+  //     postData({
+  //       name: data.name,
+  //       lastname: data.lastname,
+  //       email: data.email,
+  //       phone: data.phone,
+  //       amount: data.amount,
+  //       time: data.time,
+  //     })
+  //   );
+  //   history.push("/unicavez");
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,8 +57,8 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     const name = "active";
     e.target.className += " " + name;
     const input = document.querySelector("input[name='amount']");
-    input.value = null;
     input.required = false;
+    data.amount = e.target.value;
     setAmountFlag(e.target.value);
   };
 
@@ -126,9 +126,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     </button>
                   </div>
                   <div className="input-group">
-                    <div className="input-group-text" id="btnGroupAddon">
-                      ARS
-                    </div>
+                    <div className="input-group-text">ARS</div>
                     <input
                       name="amount"
                       type="number"
@@ -150,16 +148,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 {amountFlag == 700 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
-                      {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-bicycle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057 9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z" />
-                      </svg>{" "} */}
                       Con 10 personas que donen <b>$700</b>, en un año{" "}
                       <b>
                         construimos 100 metros de veredas para que las personas
@@ -172,23 +160,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 {amountFlag == 1000 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
-                      {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-house-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-                        />
-                      </svg>{" "} */}
                       Con 8 personas que donen <b>$1000</b> en un año
                       construimos{" "}
                       <b>
@@ -202,16 +173,6 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 {amountFlag == 1300 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
-                      {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-book-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-                      </svg>{" "} */}
                       Con tu donación de <b>$1300</b> por 6 meses, logramos
                       financiar{" "}
                       <b>
