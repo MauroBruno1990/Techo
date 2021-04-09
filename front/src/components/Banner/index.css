@@ -4,7 +4,9 @@
     min-height: 100px;
     /* line-height: 95px; */
     text-align: center;
-   padding-top: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
    margin-bottom: 5%;
-   margin-top: 20%;
+   font-size: x-large;
+   
 }

@@ -19,6 +19,7 @@ function App() {
       <Navbar />
       <Header />
       <Banner1 />
+      <Numbers />
       <BrowserRouter>
         <Switch>
           <Route exact path="/Techo" component={MasterForm} />
@@ -29,7 +30,6 @@ function App() {
       <Reality />
 
 
-      <Numbers />
 
       <Footer />
     </div>

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postData } from "../../state/reducers/user";
-import { useInput } from "../../hooks/useInput";
+
 import "./index.css";
 import SinglePayment from "../SinglePayment/SinglePayment";
 
-const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
-  const history = useHistory();
+const Form1 = ({ handleContinuar, handleData, data }) => {
+
   const dispatch = useDispatch();
 
   const [amountFlag, setAmountFlag] = useState(1000);
@@ -62,7 +61,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
     setAmountFlag(e.target.value);
   };
 
-  const handleInput = (e) => {
+  /*   const handleInput = (e) => {
+    removeActive();
+    e.target.required = true;
+    
+  }; */
+
+  const displayInput = (e) => {
+    setAmountFlag(0);
     removeActive();
     e.target.required = true;
   };
@@ -75,7 +81,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
             <img
               src="https://institucional.techo.org/wp-content/uploads/sites/8/2018/02/home-foto-mobile1.jpg"
               className="img-fluid"
-              alt="Responsive image"
+              alt="Responsive"
             />
           </div>
 
@@ -126,26 +132,37 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     </button>
                   </div>
                   <div className="input-group">
-                    <div className="input-group-text">ARS</div>
+                    <button
+                      className="btn btn-outline-primary"
+                      onClick={displayInput}
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseExample"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                    >
+                      Otro Monto
+                    </button>
+
                     <input
                       name="amount"
                       type="number"
                       min="0"
                       minLength={2}
                       maxLength={5}
-                      className="form-control"
+                      className="form-control collapse"
+                      id="collapseExample"
                       onChange={handleData}
                       value={data.amount}
                       placeholder="Otro monto"
                       aria-label="Input group example"
                       aria-describedby="btnGroupAddon"
                       style={{ width: 150 }}
-                      onClick={handleInput}
                     />
                   </div>
                 </div>
                 {console.log(amountFlag)}
-                {amountFlag == 700 ? (
+                {amountFlag === 700 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
                       Con 10 personas que donen <b>$700</b>, en un año{" "}
@@ -157,7 +174,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     </div>
                   </div>
                 ) : null}
-                {amountFlag == 1000 ? (
+                {amountFlag === 1000 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
                       Con 8 personas que donen <b>$1000</b> en un año
@@ -170,7 +187,7 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     </div>
                   </div>
                 ) : null}
-                {amountFlag == 1300 ? (
+                {amountFlag === 1300 ? (
                   <div class="card border border-primary mt-3">
                     <div class="card-body text-primary">
                       Con tu donación de <b>$1300</b> por 6 meses, logramos
@@ -234,8 +251,14 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                     />
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary mt-4">
+                <button 
+                disabled={data.name === '' || data.lastname === '' || data.amount === '' || data.phone === '' || data.email === '' ?
+                true
+                :
+                false}
+                type="submit" className="btn btn-primary mt-4">
                   Continuar
+                  
                 </button>
               </form>
               <p className="mt-5">
@@ -259,7 +282,10 @@ const Form1 = ({ handleCallback, handleContinuar, handleData, data }) => {
                 aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true"
               >
-                <div className="modal-dialog modal-dialog-centered" role="document">
+                <div
+                  className="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
                   <div className="modal-content">
                     <div className="modal-header">
                       <button

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header/Header";
-import CarrouselTestimony from "../CarrouselTestimony/CarrouselTestimony";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 
@@ -12,7 +10,7 @@ const MasterForm = () => {
     lastname: "",
     email: "",
     phone: "",
-    amount: "",
+    amount: "1000",
     time: "socio",
     dni: "",
     province: "",
@@ -41,14 +39,14 @@ const MasterForm = () => {
   return (
     <>
       <div className="masterForm">
-        {item == 0 && (
+        {item === 0 && (
           <Form1
             handleContinuar={handleContinuar}
             handleData={handleData}
             data={data}
           />
         )}
-        {item == 1 && (
+        {item === 1 && (
           <Form2
             handleVolver={handleVolver}
             handleData={handleData}
